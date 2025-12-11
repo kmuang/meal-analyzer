@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Analyzer | AI-Powered Nutrition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/logo.jpeg" type="image/x-icon">
+</head>
+
+<body>
+    <div class="background-glow"></div>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1 class="fade-in">Meal <span class="gradient-text">Analyzer</span></h1>
+            <p class="subtitle fade-in delay-1">Understand what you eat with AI-driven precision.</p>
+        </section>
+
+        <!-- Input Section -->
+        <section class="input-section fade-in delay-2">
+            <div class="glass-card">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="text">Text Input</button>
+                    <button class="tab-btn" data-tab="image">Upload Image</button>
+                </div>
+
+                <form id="analysis-form">
+                    <div class="input-group active" id="text-input-group">
+                        <input type="text" id="meal-input" placeholder="e.g., Grilled Salmon with Asparagus"
+                            autocomplete="off">
+                    </div>
+                    <div class="input-group" id="image-input-group">
+                        <div class="file-drop-area">
+                            <span class="file-msg">Drag & Drop or Click to Upload</span>
+                            <input class="file-input" type="file" accept="image/*">
+                        </div>
+                    </div>
+                    <button type="submit" class="cta-btn">Analyze Meal</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section id="results-section" class="results-section hidden">
+            <div class="glass-card result-card">
+                <div class="loading-state hidden">
+                    <div class="spinner"></div>
+                    <p>Scanning molecular composition...</p>
+                </div>
+
+                <div class="result-content hidden">
+                    <div class="result-header">
+                        <h2 id="food-name">Detected Meal</h2>
+                        <span class="confidence-badge">98% Confidence</span>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <span class="stat-label">Calories</span>
+                            <span class="stat-value gradient-text" id="calories-val">0</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-label">Protein</span>
+                            <span class="stat-value" id="protein-val">0g</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-label">Carbs</span>
+                            <span class="stat-value" id="carbs-val">0g</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-label">Fats</span>
+                            <span class="stat-value" id="fats-val">0g</span>
+                        </div>
+                    </div>
+
+                    <div class="health-score-container">
+                        <h3>Health Score</h3>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" id="health-score-bar" style="width: 0%"></div>
+                        </div>
+                        <p id="health-insight" class="insight-text">A balanced choice rich in nutrients.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
